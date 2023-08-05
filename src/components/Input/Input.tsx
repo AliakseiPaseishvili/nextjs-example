@@ -1,11 +1,11 @@
 import React, { FC } from "react";
-import { FieldValues, RegisterOptions, UseFormRegisterReturn } from "react-hook-form";
+import { RegisterField } from "@/types";
 
 type InputProps = {
   name: string;
   label?: string;
-  type?: 'block' | 'inline' | 'flex';
-  register: (name: string, options?: RegisterOptions<FieldValues, string> | undefined) => UseFormRegisterReturn<string>,
+  type?: 'block' | 'inline' | 'flex' | 'flex-1';
+  register: RegisterField,
   validationSchema?: {
     required: boolean;
   },
