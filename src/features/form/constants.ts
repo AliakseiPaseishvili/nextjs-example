@@ -7,4 +7,7 @@ export const FIELD_NAMES = {
   EMBEDDING_FIELD_NAME: 'embeddingFieldName',
   EMBEDDING_SPEC: 'embeddingSpec',
   CHUNKING_SPEC: 'chunkingSpec',
+  CONTENT_FILE: 'contentFile',
+  CONTENT_FIELD: 'contentField',
+  CONTENT_FIELD_SELECT: 'contentFieldSelect'
 } as const;

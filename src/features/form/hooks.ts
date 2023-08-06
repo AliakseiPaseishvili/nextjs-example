@@ -15,6 +15,12 @@ export const useComplexForm = () => {
           [FIELD_NAMES.EMBEDDING_SPEC]: "",
         },
       ],
+      contentFields: [
+        {
+          [FIELD_NAMES.CONTENT_FIELD_SELECT]: "",
+          [FIELD_NAMES.CONTENT_FIELD]: "",
+        },
+      ],
     },
   });
   const { fields: embeddingsFields, append: appendEmbeddingField } =

@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Select } from "@/components/Select";
 import { Input } from "@/components/Input";
 import { RegisterField } from "@/types";
+import { Typography } from "@/components/Typography";
 
 type SelectAndInputProps = {
   register: RegisterField;
@@ -9,6 +10,10 @@ type SelectAndInputProps = {
   inputName: string;
   selectLabel?: string;
   inputLabel?: string;
+  isDefault?: boolean;
+  isLast?: boolean;
+  placeholderLabel?: string;
+  append?: () => void;
 };
 
 export const SelectAndInput: FC<SelectAndInputProps> = ({
@@ -17,19 +22,31 @@ export const SelectAndInput: FC<SelectAndInputProps> = ({
   inputName,
   selectLabel,
   inputLabel,
+  isDefault,
+  isLast,
+  placeholderLabel,
+  append,
 }) => {
   return (
-    <div className="flex direction-row gap-2 justify-between">
+    <div className="flex direction-row gap-2 mb-4 justify-start items-center">
       <Select
         type="flex-1"
-        {...register(selectName)}
+        grow="grow-0"
+        placeholder={placeholderLabel}
+        basis="basis-1/3"
+        options={["first", "second"]}
         label={selectLabel}
+        {...register(selectName)}
       />
       <Input
         type="flex-1"
-        {...register(inputName)}
+        basis="basis-1/3"
+        grow="grow-0"
         label={inputLabel}
+        {...register(inputName)}
       />
+      {isDefault && <Typography>Default</Typography>}
+      {isLast && <Typography onClick={append}>Add</Typography>}
     </div>
   );
 };

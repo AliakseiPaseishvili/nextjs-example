@@ -13,9 +13,10 @@ const CLASS_NAMES_BY_COMPONENT: { [key: string]: string } = {
 export const Typography: React.FC<TypographyProps> = ({
   children,
   component = DEFAULT_COMPONENT,
+  ...props
 }) => {
   const Component = component;
   const className = CLASS_NAMES_BY_COMPONENT[component.toString()];
 
-  return <Component className={className}>{children}</Component>;
+  return <Component className={className} {...props}>{children}</Component>;
 };
