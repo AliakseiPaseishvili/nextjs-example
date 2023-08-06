@@ -4,6 +4,7 @@ import { DEFAULT_COMPONENT } from "./constants";
 type TypographyProps = {
   component?: ElementType;
   children?: ReactNode;
+  className?: string;
 };
 
 const CLASS_NAMES_BY_COMPONENT: { [key: string]: string } = {
@@ -13,10 +14,11 @@ const CLASS_NAMES_BY_COMPONENT: { [key: string]: string } = {
 export const Typography: React.FC<TypographyProps> = ({
   children,
   component = DEFAULT_COMPONENT,
+  className: propsClassName,
   ...props
 }) => {
   const Component = component;
   const className = CLASS_NAMES_BY_COMPONENT[component.toString()];
 
-  return <Component className={className} {...props}>{children}</Component>;
+  return <Component className={`${className} ${propsClassName}`} {...props}>{children}</Component>;
 };

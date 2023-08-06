@@ -3,12 +3,15 @@ import { Typography } from "@/components/Typography";
 import { RegisterField } from "@/types";
 import { FIELD_NAMES } from "../constants";
 import { SelectAndInput } from "./SelectAndInput";
+import { FieldsHeader } from "./FieldsHeader";
 
 type EmbeddingsFieldsProps = {
   register: RegisterField;
   embeddingsFields: Record<"id", string>[];
   append: () => void;
 };
+
+const HEADER_LABELS = ['Embedding Spec', 'Embedding Field Name'];
 
 export const EmbeddingsFields: FC<EmbeddingsFieldsProps> = ({
   register,
@@ -28,6 +31,7 @@ export const EmbeddingsFields: FC<EmbeddingsFieldsProps> = ({
         inputLabel="Chunking Field name"
         placeholderLabel="Select Chunking Spec"
       />
+      <FieldsHeader labels={HEADER_LABELS} />
       {embeddingsFields.map((item, index) => (
         <SelectAndInput
           append={append}
@@ -42,10 +46,6 @@ export const EmbeddingsFields: FC<EmbeddingsFieldsProps> = ({
           inputName={
             `embeddings.${index}.${FIELD_NAMES.EMBEDDING_FIELD_NAME}` as const
           }
-          {...(!index && {
-            selectLabel: "Embedding Spec",
-            inputLabel: "Embedding Field Name",
-          })}
         />
       ))}
     </fieldset>
