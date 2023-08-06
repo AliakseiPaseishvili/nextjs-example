@@ -9,6 +9,7 @@ type TypographyProps = {
 
 const CLASS_NAMES_BY_COMPONENT: { [key: string]: string } = {
   h1: "text-3xl font-bold tracking-tight text-white-900 sm:text-4xl",
+  h2: "text-xl font-bold tracking-tight text-white-900 sm:text-4xl",
 };
 
 export const Typography: React.FC<TypographyProps> = ({
