@@ -1,10 +1,7 @@
-import {
-  FieldValues,
-  RegisterOptions,
-  UseFormRegisterReturn,
-} from "react-hook-form";
+import { UseFormRegister } from "react-hook-form";
 
-export type RegisterField = (
-  name: string,
-  options?: RegisterOptions<FieldValues, string> | undefined
-) => UseFormRegisterReturn<string>;
+export type FormType = {
+  [key: string]: string | { [key: string]: string }[];
+};
+
+export type RegisterField = UseFormRegister<FormType>;

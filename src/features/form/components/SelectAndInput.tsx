@@ -22,14 +22,12 @@ export const SelectAndInput: FC<SelectAndInputProps> = ({
     <div className="flex direction-row gap-2 justify-between">
       <Select
         type="flex-1"
-        register={register}
-        name={selectName}
+        {...register(selectName)}
         label={selectLabel}
       />
       <Input
         type="flex-1"
-        register={register}
-        name={inputName}
+        {...register(inputName)}
         label={inputLabel}
       />
     </div>

@@ -1,10 +1,11 @@
 import { useFieldArray, useForm } from "react-hook-form";
 import { FIELD_NAMES } from "./constants";
+import { FormType } from "@/types";
 
 export const useComplexForm = () => {
-  const { control, register } = useForm({
+  const { control, register } = useForm<FormType>({
     defaultValues: {
-      ['embeddings']: [
+      embeddings: [
         {
           [FIELD_NAMES.EMBEDDING_FIELD_NAME]: "",
           [FIELD_NAMES.EMBEDDING_SPEC]: "",
@@ -14,7 +15,6 @@ export const useComplexForm = () => {
           [FIELD_NAMES.EMBEDDING_SPEC]: "",
         },
       ],
-      ['contentFields']: [{}],
     },
   });
   const { fields: embeddingsFields, append: appendEmbeddingField } =

@@ -10,26 +10,22 @@ type FormBaseFieldsProps = {
 export const FormBaseFields: FC<FormBaseFieldsProps> = ({ register }) => (
   <>
     <Input
-      register={register}
-      name={FIELD_NAMES.CHUNK_DIRECTORY}
+      {...register(FIELD_NAMES.CHUNK_DIRECTORY)}
       label="Select File Directory to Chunk"
     />
     <Input
-      register={register}
-      name={FIELD_NAMES.GENERATED_ID}
-      validationSchema={{ required: true }}
+      {...(register(FIELD_NAMES.GENERATED_ID), { required: true })}
       type="flex"
+      name={FIELD_NAMES.GENERATED_ID}
       label="Generated ID"
     />
     <Input
-      register={register}
-      name={FIELD_NAMES.COLLECTION_NAME}
+      {...register(FIELD_NAMES.COLLECTION_NAME)}
       type="flex"
       label="Collection Name"
     />
     <Input
-      register={register}
-      name={FIELD_NAMES.COLLECTION_TAGS}
+      {...register(FIELD_NAMES.COLLECTION_TAGS)}
       type="flex"
       label="Collection Tags"
     />
