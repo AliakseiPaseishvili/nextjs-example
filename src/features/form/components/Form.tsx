@@ -6,6 +6,7 @@ import { FormBaseFields } from "./FormBaseFields";
 import { EmbeddingsFields } from "./EmbeddingsFields";
 import { FIELD_NAMES } from "../constants";
 import { ContentFields } from "./ContentFields";
+import { BUTTON_TYPES, Button } from "@/components/Button";
 
 export const Form = () => {
   const {
@@ -16,7 +17,7 @@ export const Form = () => {
     appendContentField,
   } = useComplexForm();
   return (
-    <div>
+    <form>
       <Typography component="h4">
         Process and Register Document Collections from a Processed Folder Dump
       </Typography>
@@ -41,6 +42,9 @@ export const Form = () => {
           })
         }
       />
-    </div>
+      <div className="flex direction-row justify-center">
+        <Button type={BUTTON_TYPES.BIG}>Create</Button>
+      </div>
+    </form>
   );
 };

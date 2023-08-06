@@ -8,17 +8,23 @@ type TypographyProps = {
 };
 
 const CLASS_NAMES_BY_COMPONENT: { [key: string]: string } = {
-  h1: "text-3xl font-bold tracking-tight text-white-900 sm:text-4xl"
+  h1: "text-3xl font-bold tracking-tight text-white-900 sm:text-4xl",
 };
 
 export const Typography: React.FC<TypographyProps> = ({
   children,
   component = DEFAULT_COMPONENT,
-  className: propsClassName,
+  className: propsClassName = "",
   ...props
 }) => {
   const Component = component;
-  const className = CLASS_NAMES_BY_COMPONENT[component.toString()];
+  const classNameByComponent = CLASS_NAMES_BY_COMPONENT[component.toString()];
 
-  return <Component className={`${className} ${propsClassName}`} {...props}>{children}</Component>;
+  const className = [classNameByComponent || "", propsClassName].join(" ");
+
+  return (
+    <Component className={className} {...props}>
+      {children}
+    </Component>
+  );
 };

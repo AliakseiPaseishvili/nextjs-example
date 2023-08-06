@@ -23,7 +23,7 @@ const navigation: NavItemProps[] = [
   },
   {
     name: "Copilot UI",
-    href: "#",
+    href: "/copilot",
   },
 ];
 
