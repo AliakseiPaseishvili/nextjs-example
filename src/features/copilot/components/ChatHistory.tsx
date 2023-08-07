@@ -4,7 +4,7 @@ import { QuestionsContext } from "../context/Context";
 import { History } from "./History";
 
 export const ChatHistory = () => {
-  const { questions } = useContext(QuestionsContext);
+  const { questions, index, selectQuestion } = useContext(QuestionsContext);
 
-  return <History data={questions} />;
+  return <History data={questions} selectedIndex={index} onSelect={selectQuestion} />;
 };

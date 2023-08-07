@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { UseFormRegister } from "react-hook-form";
 
 export type FormType = {
@@ -13,3 +14,7 @@ export type FormType = {
 };
 
 export type RegisterField = UseFormRegister<FormType>;
+
+export interface ReactChildren {
+  children: ReactNode;
+}

@@ -1,6 +1,7 @@
 export const CHAT_FIELDS = {
   QUESTION: "question",
   CONTEXT: "context",
+  SEARCH: 'serach',
 };
 
 export const DEFAULT_ANSWER =
