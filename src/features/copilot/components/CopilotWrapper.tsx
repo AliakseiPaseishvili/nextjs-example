@@ -8,6 +8,7 @@ import { Collections } from "./Collections";
 import { Search } from "./Search";
 
 export const CopilotWrapper = () => (
+  <div className="w-full flex flex-col gap-4">
   <DomainProvider>
     <div className="w-full flex direction-row gap-4">
       <QuestionsProvider>
@@ -22,4 +23,5 @@ export const CopilotWrapper = () => (
       <Search />
     </div>
   </DomainProvider>
+  </div>
 );
