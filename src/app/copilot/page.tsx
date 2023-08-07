@@ -1,5 +1,5 @@
 import React from "react";
-import { CopilotWrapper } from "@/features/copilot/components/CopilotWrapper";
+import { CopilotWrapper } from "@/features/copilot";
 
 const Copilot = () => {
   return (

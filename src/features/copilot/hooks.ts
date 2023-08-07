@@ -19,7 +19,7 @@ export const useChatForm = () => {
   const { register, handleSubmit, reset } = useForm();
   const { addQuestion, index, questions } = useContext(QuestionsContext);
   const { domain } = useContext(DomainContext);
-  console.log(domain);
+  
   const onSubmit = useCallback(
     () =>
       handleSubmit((data) => {

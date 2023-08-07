@@ -19,7 +19,7 @@ const navigation: NavItemProps[] = [
   },
   {
     name: "Flow builder",
-    href: "#",
+    href: "/builder",
   },
   {
     name: "Copilot UI",
